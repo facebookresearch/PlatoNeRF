@@ -1,0 +1,6 @@
+OpenEXR
+imath
+numpy
+matplotlib
+opencv-python
+mitsuba

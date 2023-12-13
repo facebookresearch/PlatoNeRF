@@ -1,0 +1,84 @@
+<scene version="3.0.0">
+	<default name="integrator" value="path" />
+	<default name="spp" value="64" />
+	<default name="max_depth" value="65" />
+	<integrator type="aov">
+	    <string name="aovs" value="dd.y:depth"/>
+	    <integrator type="path" name="my_image"/>
+	</integrator>
+
+	<sensor type="perspective">
+		<float name="fov" value="90"/>
+
+		<transform name="to_world">
+			<lookat target="0, -1.5, 3" origin="0.0, 0.0, 0.0" up="0, 1, 0"/>
+		</transform>
+
+		<sampler type="independent">
+			<integer name="sample_count" value="$spp" />
+		</sampler>
+
+		<film type="hdrfilm">
+            <boolean name="banner" value="false"/>
+
+			<integer name="height" value="512"/>
+			<integer name="width" value="512"/>
+			<rfilter type="gaussian"/>
+
+		</film>
+	</sensor>
+
+    <shape type="obj">
+    <string name="filename" value="bunnychair.obj"/>
+        <transform name="to_world">
+	    <rotate y="1" angle="360"/>
+            <scale value="1.25"/>
+            <translate x="0" y="-2" z="3"/>
+        </transform>
+    </shape>
+
+    <emitter type="point">
+        <rgb name="intensity" value="20"/>
+        <point name="position" x="0" y="0" z="-2"/>
+    </emitter>
+
+	<!-- Back wall-->
+    <shape type="cube">
+        <transform name="to_world">
+            <scale x="2.0" y="2.0" z="0.0001"/>
+            <translate x="0" y="0" z="4"/> 
+        </transform>
+    </shape>
+
+	<!-- Floor wall-->
+    <shape type="cube">
+        <transform name="to_world">
+            <scale x="2.0" y="0.0001" z="2.0"/>
+            <translate x="0" y="-2" z="2"/> 
+        </transform>
+    </shape>
+
+	<!-- Right wall-->
+    <shape type="cube">
+        <transform name="to_world">
+            <scale x="0.0001" y="2.0" z="2.0"/>
+            <translate x="-2.0" y="0" z="2"/> 
+        </transform>
+    </shape>
+
+	<!-- Left wall-->
+    <shape type="cube">
+        <transform name="to_world">
+            <scale x="0.0001" y="2.0" z="2.0"/>
+            <translate x="2.0" y="0" z="2"/> 
+        </transform>
+    </shape>
+
+	<!-- Ceiling wall-->
+    <shape type="cube">
+        <transform name="to_world">
+            <scale x="2.0" y="0.0001" z="2.0"/>
+            <translate x="0" y="2" z="2"/> 
+        </transform>
+    </shape>
+</scene>

@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<scene version="0.5.0">
+	<integrator type="bdpt">
+        <integer name="maxDepth" value="-1"/>
+		<boolean name="sampleDirect" value="false"/>
+	</integrator>
+
+	<sensor type="perspective">
+		<!-- <float name="farClip" value="2800"/> -->
+		<float name="focusDistance" value="1000"/>
+		<float name="fov" value="90"/>
+		<string name="fovAxis" value="x"/>
+		<!-- <float name="nearClip" value="10"/> -->
+
+		<transform name="toWorld">
+			<lookat target="0, 0, 3" origin="0, 0, 0" up="0, 1, 0"/>
+		</transform>
+		
+		<sampler type="ldsampler">
+			<integer name="sampleCount" value="$samples"/>
+		</sampler>
+
+		<film type="hdrfilm">
+            <boolean name="banner" value="false"/>
+
+			<integer name="height" value="512"/>
+			<integer name="width" value="512"/>
+			<string name="decomposition" value="$decomposition"/>
+			<float name="minBound" value="$tMin"/>
+			<float name="maxBound" value="$tMax"/>
+			<float name="binWidth" value="$tRes"/>
+
+            <string name="modulation" value="$modulation"/>
+            <float name="lambda" value="$lambda"/>
+            <float name="phase" value="$phase"/>
+
+			<rfilter type="gaussian"/>
+
+		</film>
+	</sensor>
+
+    <!-- Bunny object -->
+    <shape type="obj">
+    <string name="filename" value="dragon.obj"/>
+        <transform name="toWorld">
+	    <rotate y="1" angle="360"/>
+            <scale value="1.25"/>
+            <translate x="0" y="-2" z="3"/>
+        </transform>
+    </shape>
+
+	<!-- Right wall-->
+    <shape type="cube">
+        <transform name="toWorld">
+            <scale x="0.0001" y="2.0" z="2.0"/>
+            <translate x="-2.0" y="0" z="2"/> 
+        </transform>
+    </shape>
+
+	<!-- Left wall-->
+    <shape type="cube">
+        <transform name="toWorld">
+            <scale x="0.0001" y="2.0" z="2.0"/>
+            <translate x="2.0" y="0" z="2"/> 
+        </transform>
+    </shape>
+
+	<!-- Back wall-->
+    <shape type="cube">
+        <transform name="toWorld">
+            <scale x="2.0" y="2.0" z="0.0001"/>
+            <translate x="0" y="0" z="4"/> 
+        </transform>
+    </shape>
+
+	<!-- Floor wall-->
+    <shape type="cube">
+        <transform name="toWorld">
+            <scale x="2.0" y="0.0001" z="2.0"/>
+            <translate x="0" y="-2" z="2"/> 
+        </transform>
+    </shape>
+
+	<!-- Ceiling wall-->
+    <shape type="cube">
+        <transform name="toWorld">
+            <scale x="2.0" y="0.0001" z="2.0"/>
+            <translate x="0" y="2" z="2"/> 
+        </transform>
+    </shape>
+
+	<!--Wall behind object-->
+    <!-- <shape type="rectangle">
+        <transform name="toWorld">
+            <scale x="5.0" y="5.0" z="0.0001"/>
+            <lookat target="0,0,0" origin="0,0,5" up="0,1,0"/> 
+        </transform>
+    </shape> -->
+
+	<!-- <include filename="12beam.xml"/> -->
+	<include filename="illumination.xml"/>
+
+	<!-- <emitter type="point">
+		<spectrum name="intensity" value="1000"/>
+		<point name="position" x="0" y="0.001" z="0"/>
+	</emitter>
+	 -->
+</scene>

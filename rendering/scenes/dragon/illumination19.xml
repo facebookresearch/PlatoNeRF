@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<scene version="0.5.0">
+    <emitter type="spot">
+        <spectrum name="intensity" value="1e6"/>
+        <float name="cutoffAngle" value="2e-1"/>
+        <float name="beamWidth" value="1e-1"/>
+        <transform name="toWorld">
+            <lookat origin="0, 0, 0" target="1.8562187450006604, -2.7640045545995235, 3.468554735183716"/>
+        </transform>
+    </emitter>
+</scene>
