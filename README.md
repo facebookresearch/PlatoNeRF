@@ -16,7 +16,7 @@
     <a href='https://arxiv.org/abs/2312.14239'><img src='https://img.shields.io/badge/arXiv-Paper_PDF-red?style=flat&logo=arXiv&logoColor=green' alt='Paper PDF'></a>
   </p>
 
-  <p align="center" style="font-size:16px">Official PyTorch implementation of PlatoNeRF, a method for recovering 3D geometry from single-view two-bounce lidar measurements. PlatoNeRF learns 3D geometry by reconstructing lidar measurements. PlatoNeRF is named after the <a href="https://en.wikipedia.org/wiki/Allegory_of_the_cave">allegory of Plato's Cave</a>, in which reality is discerned from shadows cast on a cave wall.</p>
+  <p align="center" style="font-size:16px">Official PyTorch implementation of PlatoNeRF (CVPR 2024), a method for recovering 3D geometry from single-view two-bounce lidar measurements. PlatoNeRF learns 3D geometry by reconstructing lidar measurements. PlatoNeRF is named after the <a href="https://en.wikipedia.org/wiki/Allegory_of_the_cave">allegory of Plato's Cave</a>, in which reality is discerned from shadows cast on a cave wall.</p>
   <p align="center">
     <img src="media/teaser.gif" />
   </p>
@@ -167,7 +167,7 @@ Our implementation is based on [NeRF-PyTorch](https://github.com/yenchenlin/nerf
 ## Citation
 
 ```
-@article{PlatoNeRF,
+@inproceedings{PlatoNeRF,
 	author    = {Klinghoffer, Tzofi and
 		     Xiang, Xiaoyu and
 		     Somasundaram, Siddharth and
@@ -175,9 +175,9 @@ Our implementation is based on [NeRF-PyTorch](https://github.com/yenchenlin/nerf
 		     Richardt, Christian and
 		     Raskar, Ramesh and
 		     Ranjan, Rakesh},
-	title     = {{PlatoNeRF}: 3D Reconstruction in Plato's Cave via Single-View Two-Bounce Lidar},
-	booktitle = {arXiv preprint arXiv:2312.14239},
-	year      = {2023},
+	title     = {{PlatoNeRF}: 3D Reconstruction in {Plato's} Cave via Single-View Two-Bounce Lidar},
+	booktitle = {Conference on Computer Vision and Pattern Recognition (CVPR)},
+	year      = {2024},
 	url       = {https://platonerf.github.io},
 }
 ```
